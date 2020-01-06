@@ -1,6 +1,6 @@
 {
   "name": "daterange-difference",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "daterange difference",
   "main": "lib/index.js",
   "directories": {
@@ -12,18 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Southhill/dateRange-difference.git"
+    "url": "git+https://github.com/Southhill/daterange-difference.git"
   },
   "keywords": [
-    "dateRange",
+    "daterange",
     "difference"
   ],
   "author": "Cao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Southhill/dateRange-difference/issues"
+    "url": "https://github.com/Southhill/daterange-difference/issues"
   },
-  "homepage": "https://github.com/Southhill/dateRange-difference#readme",
+  "homepage": "https://github.com/Southhill/daterange-difference#readme",
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",

@@ -1,12 +1,12 @@
-# dateRange difference
+# daterange difference
 
 ## descripation
-dateRange difference calculate
+daterange difference calculate
 
 ## usage
 
 ```javascript
-import dateDiff from 'dateRange-difference'
+import dateDiff from 'daterange-difference'
 
 const result = dateDiff('2020-01-01', '2020-06-30')
 
