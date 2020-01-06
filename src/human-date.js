@@ -88,17 +88,19 @@ function isLastDayForMonth(dt) {
  */
 function totalDayForMonth(dt) {
   const y = dt.getFullYear()
+  const m = dt.getMonth()
   const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-  if (isLeapYear(y)) {
+
+  if (isLeapYear(y) && m + 1 === 2) {
     return 29
   } else {
-    return days[dt.getMonth()]
+    return days[m]
   }
 }
 
 export default class HumanDate {
   constructor(dt) {
-    if (typeof dt === 'string') {
+    if (typeof dt === "string") {
       try {
         this.dt = new Date(dt)
       } catch (err) {
@@ -107,7 +109,7 @@ export default class HumanDate {
     } else if (dt instanceof Date) {
       this.dt = new Date(dt.getTime())
     } else {
-      throw new Error('wrong parameter for Date')
+      throw new Error("wrong parameter for Date")
     }
   }
 
@@ -184,7 +186,7 @@ export default class HumanDate {
     if (isLastDayForMonth(this.dt)) {
       this.day = 0
     } else {
-      this.month += 1
+      this.month -= 1
     }
 
     return this

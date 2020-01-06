@@ -1,4 +1,4 @@
-import HumanDate from './human-date.js'
+import HumanDate from "./human-date.js"
 
 export default function dateRangeDiff(startDateStr, endDateStr, opts = {}) {
   const reg = /^\d{4}([\/-])\d{2}\1\d{2}$/
@@ -60,7 +60,7 @@ export default function dateRangeDiff(startDateStr, endDateStr, opts = {}) {
   do {
     startHumanDate.addOneDay()
     days += 1
-  } while (startHumanDate.timestamp < endDate.getTime())
+  } while (startHumanDate.timestamp <= endDate.getTime())
   days -= 1
 
   // 计算最终结果
