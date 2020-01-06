@@ -1,0 +1,26 @@
+{
+  "name": "daterange-difference",
+  "version": "1.0.0",
+  "description": "daterange difference",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Southhill/dateRange-difference.git"
+  },
+  "keywords": [
+    "dateRange",
+    "difference"
+  ],
+  "author": "Cao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Southhill/dateRange-difference/issues"
+  },
+  "homepage": "https://github.com/Southhill/dateRange-difference#readme"
+}
