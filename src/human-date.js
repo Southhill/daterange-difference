@@ -14,7 +14,6 @@ function isLeapYMD(dt) {
   const m = dt.getMonth() + 1
   const d = dt.getDate()
 
-  // endDateStr 是闰年的2月29号
   return isLeapYear(y) && m === 2 && d === 29
 }
 /**
@@ -194,5 +193,7 @@ export default class HumanDate {
 
   minusOneDay() {
     this.day -= 1
+
+    return this
   }
 }
