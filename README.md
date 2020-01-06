@@ -1,1 +1,23 @@
 # dateRange difference
+
+## descripation
+dateRange difference calculate
+
+## usage
+
+```javascript
+import dateDiff from 'dateRange-difference'
+
+const result = dateDiff('2020-01-01', '2020-06-30')
+
+// output:
+//  {
+//    years,
+//    months,
+//    days,
+//    weeks,
+//    totalDay,
+//    totalMonth,
+//    totalYear
+//  }
+```
