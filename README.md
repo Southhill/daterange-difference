@@ -11,7 +11,7 @@ import dateDiff from 'daterange-difference'
 // 在node环境中使用：[use in node env]
 const dateDiff = require('daterange-difference')
 
-const result = dateDiff('2020-01-01', '2021-02-28')
+const result = dateDiff('2020-01-01', '2021-02-28').default
 
 // output:
 // {
