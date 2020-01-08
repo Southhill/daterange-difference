@@ -9,9 +9,9 @@ daterange difference calculate
 // 使用了babel转义`import`语法后：[use babel transform `import` synax]
 import dateDiff from 'daterange-difference'
 // 在node环境中使用：[use in node env]
-const dateDiff = require('daterange-difference')
+const dateDiff = require('daterange-difference').default
 
-const result = dateDiff('2020-01-01', '2021-02-28').default
+const result = dateDiff('2020-01-01', '2021-02-28')
 
 // output:
 // {
