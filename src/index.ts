@@ -1,7 +1,24 @@
-import HumanDate from "./human-date.js"
+import HumanDate from "./human-date"
+interface DiffDayResult {
+  years: number
+  months: number
+  days: number
+  weeks: number
+  totalDay: number
+  totalMonth: number
+  totalYear: number
+}
 
-export default function dateRangeDiff(startDateStr, endDateStr, opts = {}) {
-  const reg = /^\d{4}([\/-])\d{2}\1\d{2}$/
+interface DiffOpts {
+  includeLastDay?: boolean
+}
+
+export default function dateRangeDiff(
+  startDateStr: string,
+  endDateStr: string,
+  opts: DiffOpts = {}
+): DiffDayResult {
+  const reg: RegExp = /^\d{4}([\/-])\d{2}\1\d{2}$/
   const { includeLastDay = true } = opts
 
   if (!reg.test(startDateStr) || !reg.test(endDateStr)) {
@@ -17,13 +34,15 @@ export default function dateRangeDiff(startDateStr, endDateStr, opts = {}) {
     startDateStr = temp
   }
 
-  let years = 0,
-    months = 0,
-    days = 0,
-    weeks = 0,
-    totalDay = 0,
-    totalMonth = 0,
-    totalYear = 0
+  const result: DiffDayResult = {
+    years: 0,
+    months: 0,
+    days: 0,
+    weeks: 0,
+    totalDay: 0,
+    totalMonth: 0,
+    totalYear: 0
+  }
 
   const startDate = new Date(startDateStr)
   const endDate = new Date(endDateStr)
@@ -38,44 +57,38 @@ export default function dateRangeDiff(startDateStr, endDateStr, opts = {}) {
   // 计算年
   do {
     startHumanDate.addOneYear()
-    years += 1
+    result.years += 1
   } while (startHumanDate.timestamp <= endDate.getTime())
 
   // 最终跳出while循环时，startDate的日期被多加1，这里做修正处理
   startHumanDate.minusOneYear()
-  years -= 1
+  result.years -= 1
 
   // 计算月
   do {
     startHumanDate.addOneMonth()
 
-    months += 1
+    result.months += 1
   } while (startHumanDate.timestamp <= endDate.getTime())
 
   // 修正 startDate 时间
   startHumanDate.minusOneMonth()
-  months -= 1
+  result.months -= 1
 
   // 计算日
   do {
     startHumanDate.addOneDay()
-    days += 1
+    result.days += 1
   } while (startHumanDate.timestamp <= endDate.getTime())
-  days -= 1
+  result.days -= 1
 
   // 计算最终结果
-  totalDay = Math.floor((endDate - startDate) / 86400000)
-  totalMonth = years * 12 + months
-  totalYear = years
-  weeks = Math.floor(totalDay / 7)
+  result.totalDay = Math.floor(
+    (endDate.getTime() - startDate.getTime()) / 86400000
+  )
+  result.totalMonth = result.years * 12 + result.months
+  result.totalYear = result.years
+  result.weeks = Math.floor(result.totalDay / 7)
 
-  return {
-    years,
-    months,
-    days,
-    weeks,
-    totalDay,
-    totalMonth,
-    totalYear
-  }
+  return result
 }
