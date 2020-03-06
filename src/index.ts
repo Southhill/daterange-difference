@@ -1,4 +1,5 @@
 import HumanDate from "./human-date"
+
 interface DiffDayResult {
   years: number
   months: number
@@ -8,7 +9,6 @@ interface DiffDayResult {
   totalMonth: number
   totalYear: number
 }
-
 interface DiffOpts {
   includeLastDay?: boolean
 }

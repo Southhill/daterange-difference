@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "complie": "tsc",
+    "complie": "rimraf lib && tsc",
     "test": "mocha"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/register": "^7.8.6",
+    "rimraf": "^3.0.2",
     "typescript": "^3.8.3"
   }
 }
