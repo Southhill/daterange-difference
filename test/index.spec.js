@@ -1,7 +1,6 @@
-// import dateRangeDiff from "../lib/index"
-// import assert from "assert"
-const dateRangeDiff = require("../lib/index").default
-const assert = require("assert")
+import assert from "assert"
+import dateRangeDiff from "../lib/index"
+
 describe("diff date", () => {
   describe("开始时间：1号，结束时间：月底", () => {
     it("2020/01/01 - 2021/12/31", () => {
