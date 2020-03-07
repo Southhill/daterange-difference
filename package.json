@@ -1,14 +1,14 @@
 {
   "name": "daterange-difference",
-  "version": "1.0.4",
+  "version": "1.1.4",
   "description": "daterange difference",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "complie": "babel src --out-dir lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "complie": "rimraf lib && tsc",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,10 @@
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7"
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.8.6",
+    "mocha": "^7.1.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
   }
 }
