@@ -10,9 +10,10 @@ interface DiffDayResult {
 interface DiffOpts {
   includeLastDay?: boolean
 }
-export default function dateRangeDiff(
+declare function dateRangeDiff(
   startDateStr: string,
   endDateStr: string,
   opts?: DiffOpts
 ): DiffDayResult
-export {}
+
+export default dateRangeDiff
